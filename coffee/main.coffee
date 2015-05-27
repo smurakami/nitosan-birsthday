@@ -74,9 +74,22 @@ scrollToMessage = ->
     messages = $ "#messages"
     $('html, body').animate({scrollTop: messages.offset().top}, 1500)
 
+showMessage = (message, img) ->
+    $("#msg").css "opacity", 0
+    $("#msg").css "display", "block"
+    $("#msg").animate({opacity: 1})
+
+hideMessage = ->
+    $("#msg").animate {opacity: 0}, "normal", "swing", ->
+        $("#msg").css "display", "none"
+
+
 
 $ ->
     initCSS()
+
+    # evevnts
+
     $(window).resize ->
         initCSS()
     rotateNitosanBack()
@@ -88,6 +101,12 @@ $ ->
     setTimeout ->
         if scroll_to_message_flg then scrollToMessage()
     , 5000
+
+    $("#messages li img").click ->
+        showMessage()
+
+    $("#msg #msg-back-button").click ->
+        hideMessage()
 
 
 
