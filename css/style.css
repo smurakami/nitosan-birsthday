@@ -1,0 +1,19 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+  width: 100%; }
+
+#nito-san {
+  overflow: hidden;
+  width: 100%; }
+  #nito-san img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1; }
+  #nito-san #nito-san-back {
+    position: absolute;
+    z-index: −1;
+    background-color: red; }
+
+/*# sourceMappingURL=style.css.map */
