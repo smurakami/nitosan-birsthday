@@ -30,7 +30,35 @@ initCSS = ->
         nito_san_img.css "margin-left", 0
         nito_san_img.css "margin-top", nito_san.height() / 2 - nito_san_img.height() / 2
 
+    initNitosanBack()
+
+initNitosanBack = ->
+    nito_san      = $ "#nito-san"
+    housha        = $ "#nito-san-back img"
+
+    height = nito_san.height()
+    width = nito_san.width()
+    # 対角線
+    len = Math.sqrt height * height + width * width
+
+    housha.css "width", len
+    housha.css "height", len
+    housha.css "margin-left", nito_san.width()/2 - len/2
+    housha.css "margin-top",  nito_san.height()/2 - len/2
+
+rotateNitosanBack = ->
+    housha        = $ "#nito-san-back img"
+    rotation = 0
+    setInterval ->
+        housha.css {transform: "rotate(#{rotation}deg)"}
+        rotation += Math.PI / 1000 * 180
+    , 33
+
+
 $ ->
     initCSS()
     $(window).resize ->
         initCSS()
+    rotateNitosanBack()
+
+

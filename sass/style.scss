@@ -15,8 +15,12 @@ html, body {
     }
 
     #nito-san-back {
+        overflow: hidden;
         position: absolute;
         z-index: −1;
-        background-color: red;
+
+        img {
+            z-index: -1;
+        }
     }
 }
