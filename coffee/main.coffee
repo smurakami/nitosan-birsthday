@@ -31,6 +31,7 @@ initCSS = ->
         nito_san_img.css "margin-top", nito_san.height() / 2 - nito_san_img.height() / 2
 
     initNitosanBack()
+    initMessages()
 
 initNitosanBack = ->
     nito_san      = $ "#nito-san"
@@ -54,6 +55,12 @@ rotateNitosanBack = ->
         rotation += Math.PI / 1000 * 180
     , 33
 
+initMessages = ->
+    li = $ "#messages li"
+    padding = 32
+    width = $(window).width() - padding * 2
+    li.css "width", width / 2
+    li.css "height", width / 2
 
 $ ->
     initCSS()
