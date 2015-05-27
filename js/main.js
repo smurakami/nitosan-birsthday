@@ -54,12 +54,20 @@
   };
 
   initMessages = function() {
-    var li, padding, width;
+    var li, num, padding, ul, width;
     li = $("#messages li");
+    ul = $("#messages ul");
     padding = 32;
-    width = $(window).width() - padding * 2;
-    li.css("width", width / 2);
-    return li.css("height", width / 2);
+    if ($(window).width() < 500) {
+      width = $(window).width() - padding * 2;
+      li.css("width", width / 2);
+      li.css("height", width / 2);
+      return ul.css("padding-left", 0);
+    } else {
+      width = $(window).width() - padding * 2;
+      num = Math.floor(width / li.width());
+      return ul.css("padding-left", (width - num * li.width()) / 2);
+    }
   };
 
   $(function() {

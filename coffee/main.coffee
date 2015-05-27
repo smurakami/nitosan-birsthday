@@ -57,10 +57,19 @@ rotateNitosanBack = ->
 
 initMessages = ->
     li = $ "#messages li"
+    ul = $ "#messages ul"
     padding = 32
-    width = $(window).width() - padding * 2
-    li.css "width", width / 2
-    li.css "height", width / 2
+
+    if $(window).width() < 500
+        width = $(window).width() - padding * 2
+        li.css "width", width / 2
+        li.css "height", width / 2
+        ul.css "padding-left", 0
+    else
+        width = $(window).width() - padding * 2
+        num = Math.floor width / li.width()
+        ul.css "padding-left", (width - num * li.width())/2
+
 
 $ ->
     initCSS()

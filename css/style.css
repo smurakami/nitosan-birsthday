@@ -45,10 +45,22 @@ html, body {
   padding: 8px 32px; }
   #messages h1 {
     text-align: center;
-    margin-bottom: 32px; }
+    margin-bottom: 32px;
+    /* xs */
+    /* sm */
+    /* md */ }
+    @media (max-width: 767px) {
+      #messages h1 {
+        font-size: 3em; } }
+    @media (min-width: 768px) {
+      #messages h1 {
+        font-size: 3.5em; } }
+    @media (min-width: 992px) {
+      #messages h1 {
+        font-size: 4em; } }
   #messages ul {
     padding: 0;
-    margin: 0; }
+    margin: 0 auto; }
     #messages ul li {
       float: left;
       width: 200px;
@@ -72,5 +84,10 @@ html, body {
       background-color: #3498db; }
     #messages ul li.yellow .img-wrapper {
       background-color: #f1c40f; }
+
+/* xs */
+/* sm */
+/* md */
+/* lg */
 
 /*# sourceMappingURL=style.css.map */
