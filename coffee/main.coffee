@@ -70,11 +70,24 @@ initMessages = ->
         num = Math.floor width / li.width()
         ul.css "padding-left", (width - num * li.width())/2
 
+scrollToMessage = ->
+    messages = $ "#messages"
+    $('html, body').animate({scrollTop: messages.offset().top}, 1500)
+
 
 $ ->
     initCSS()
     $(window).resize ->
         initCSS()
     rotateNitosanBack()
+
+    scroll_to_message_flg = true
+    $(window).scroll ->
+        scroll_to_message_flg = false
+
+    setTimeout ->
+        if scroll_to_message_flg then scrollToMessage()
+    , 5000
+
 
 
