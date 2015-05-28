@@ -3,7 +3,7 @@
   %head
     %meta{charset: "utf-8"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}/
-    %title Notosan
+    %title Nitosan
     / favicon
     %link{rel: "shortcut icon", href: "./img/favicon.ico", type: "image/vnd.microsoft.icon"}
     %link{rel: "stylesheet", href: "css/reset.css"}/
@@ -22,14 +22,24 @@
       #nito-san-back
         %img{src: "./img/housha.png"}
     #messages
-      %h1 messages
+      %h1 By team N
       %ul.clearfix
         %li.red
           .img-wrapper
             %img{src: "./img/shintaro.png"}
+          .contents
+            %p.text
+              こんにちは
+            %p.name
+              村上晋太郎
         %li.green
           .img-wrapper
             %img{src: "./img/shintaro.png"}
+          .contents
+            %p.text
+              ほげほげ
+            %p.name
+              ほにゃらら
         %li.blue
           .img-wrapper
             %img{src: "./img/shintaro.png"}
@@ -67,8 +77,11 @@
           .img-wrapper
             %img{src: "./img/shintaro.png"}
     #msg
-      %p
-        hello hello hello hello hello hello hello hello
+      #msg-text.clearfix
+        %p.text
+        %p.name
+      .img-wrapper
+        %img#msg-face{src: ""}
       %img#msg-back-button{src: "./img/back-button.png"}
 
 

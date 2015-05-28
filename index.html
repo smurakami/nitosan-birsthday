@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
-    <title>Notosan</title>
+    <title>Nitosan</title>
     <!-- favicon -->
     <link href='./img/favicon.ico' rel='shortcut icon' type='image/vnd.microsoft.icon'>
     <link href='css/reset.css' rel='stylesheet'>
@@ -25,16 +25,32 @@
       </div>
     </div>
     <div id='messages'>
-      <h1>messages</h1>
+      <h1>By team N</h1>
       <ul class='clearfix'>
         <li class='red'>
           <div class='img-wrapper'>
             <img src='./img/shintaro.png'>
           </div>
+          <div class='contents'>
+            <p class='text'>
+              こんにちは
+            </p>
+            <p class='name'>
+              村上晋太郎
+            </p>
+          </div>
         </li>
         <li class='green'>
           <div class='img-wrapper'>
             <img src='./img/shintaro.png'>
+          </div>
+          <div class='contents'>
+            <p class='text'>
+              ほげほげ
+            </p>
+            <p class='name'>
+              ほにゃらら
+            </p>
           </div>
         </li>
         <li class='blue'>
@@ -100,9 +116,13 @@
       </ul>
     </div>
     <div id='msg'>
-      <p>
-        hello hello hello hello hello hello hello hello
-      </p>
+      <div class='clearfix' id='msg-text'>
+        <p class='text'></p>
+        <p class='name'></p>
+      </div>
+      <div class='img-wrapper'>
+        <img id='msg-face' src=''>
+      </div>
       <img id='msg-back-button' src='./img/back-button.png'>
     </div>
   </body>

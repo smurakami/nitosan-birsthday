@@ -70,17 +70,36 @@ initMessages = ->
         num = Math.floor width / li.width()
         ul.css "padding-left", (width - num * li.width())/2
 
+initMSG = ->
+    btn = $ "#msg #msg-back-button"
+
+
 scrollToMessage = ->
     messages = $ "#messages"
     $('html, body').animate({scrollTop: messages.offset().top}, 1500)
 
-showMessage = (message, img) ->
+showMessage = (message_text, name_text, img_src) ->
+    # console.log message
+    # console.log name
+    console.log img_src
+
+    # set up contents
+    text = $ '#msg #msg-text .text'
+    name = $ '#msg #msg-text .name'
+    img  = $ '#msg-face'
+
+    console.log img
+
+    text.text(message_text)
+    name.text(name_text)
+    img.attr("src", img_src)
+
     $("#msg").css "opacity", 0
     $("#msg").css "display", "block"
-    $("#msg").animate({opacity: 1})
+    $("#msg").animate({opacity: 1}, "fast")
 
 hideMessage = ->
-    $("#msg").animate {opacity: 0}, "normal", "swing", ->
+    $("#msg").animate {opacity: 0}, "fast", "swing", ->
         $("#msg").css "display", "none"
 
 
@@ -103,7 +122,12 @@ $ ->
     , 5000
 
     $("#messages li img").click ->
-        showMessage()
+        li = $(this).parent().parent()
+        img = li.find("img")
+        text = li.find(".contents .text")
+        name = li.find(".contents .name")
+
+        showMessage(text.text(), name.text(), img.attr("src"))
 
     $("#msg #msg-back-button").click ->
         hideMessage()
