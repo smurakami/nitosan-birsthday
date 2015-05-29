@@ -50,7 +50,6 @@ initCSS = ->
 
     initNitosanBack()
     initMessages()
-
     fires.setup()
 
 initNitosanBack = ->

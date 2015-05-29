@@ -148,11 +148,11 @@ html, body {
     background-color: black; }
   #fires #fire-button {
     position: fixed;
-    width: 200px;
+    width: 140px;
     height: auto;
     left: 50%;
-    margin-left: -100px;
-    bottom: 48px; }
+    margin-left: -70px;
+    bottom: 32px; }
 
 #canvas {
   position: fixed;
