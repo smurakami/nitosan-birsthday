@@ -125,6 +125,42 @@ html, body {
     width: 200px;
     height: auto; }
 
+#fires {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  top: 0; }
+  #fires img#nito-san-shadow {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: auto; }
+  #fires #fires-back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #f1c40f; }
+  #fires #fires-dark {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black; }
+  #fires #fire-button {
+    position: fixed;
+    width: 200px;
+    height: auto;
+    left: 50%;
+    margin-left: -100px;
+    bottom: 48px; }
+
+#canvas {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+
 /* xs */
 /* sm */
 /* md */
