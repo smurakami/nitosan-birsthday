@@ -122,6 +122,7 @@
     img.attr("src", img_src);
     $("#msg").css("opacity", 0);
     $("#msg").css("display", "block");
+    $('#msg').scrollTop(0);
     return $("#msg").animate({
       opacity: 1
     }, "fast");

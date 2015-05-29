@@ -310,16 +310,16 @@ $("#fire-button").bind("touchstart", function(e){
     $(this).attr("src", "./img/fire-button-pushed.png");
 });
 
-$("#fire-button").mouseup(function(){
-    wind = 0.0;
-    $(this).attr("src", "./img/fire-button.png");
-});
+// $("#fire-button").mouseup(function(){
+//     wind = 0.0;
+//     $(this).attr("src", "./img/fire-button.png");
+// });
 
-$("#fire-button").bind("touchend", function(e){
-    e.preventDefault();
-    wind = 0.0;
-    $(this).attr("src", "./img/fire-button.png");
-});
+// $("#fire-button").bind("touchend", function(e){
+//     e.preventDefault();
+//     wind = 0.0;
+//     $(this).attr("src", "./img/fire-button.png");
+// });
 
 var render = function() {
     ctx.clearRect(0, 0, width, height);

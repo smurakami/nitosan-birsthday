@@ -123,6 +123,7 @@ showMessage = (message_html, name_text, img_src) ->
 
     $("#msg").css "opacity", 0
     $("#msg").css "display", "block"
+    $('#msg').scrollTop(0)
     $("#msg").animate({opacity: 1}, "fast")
 
 hideMessage = ->
