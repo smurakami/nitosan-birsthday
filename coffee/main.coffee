@@ -108,7 +108,7 @@ scrollToMessage = ->
     messages = $ "#messages"
     $('html, body').animate({scrollTop: messages.offset().top}, 1500)
 
-showMessage = (message_text, name_text, img_src) ->
+showMessage = (message_html, name_text, img_src) ->
     # console.log message
     # console.log name
     console.log img_src
@@ -118,7 +118,7 @@ showMessage = (message_text, name_text, img_src) ->
     name = $ '#msg #msg-text .name'
     img  = $ '#msg-face'
 
-    text.text(message_text)
+    text.html(message_html)
     name.text(name_text)
     img.attr("src", img_src)
 
@@ -161,7 +161,7 @@ $ ->
         img = li.find("img")
         text = li.find(".contents .text")
         name = li.find(".contents .name")
-        showMessage(text.text(), name.text(), img.attr("src"))
+        showMessage(text.html(), name.text(), img.attr("src"))
 
     $("#messages li img").mousedown ->
         imageTouch this

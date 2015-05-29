@@ -111,13 +111,13 @@
     }, 1500);
   };
 
-  showMessage = function(message_text, name_text, img_src) {
+  showMessage = function(message_html, name_text, img_src) {
     var img, name, text;
     console.log(img_src);
     text = $('#msg #msg-text .text');
     name = $('#msg #msg-text .name');
     img = $('#msg-face');
-    text.text(message_text);
+    text.html(message_html);
     name.text(name_text);
     img.attr("src", img_src);
     $("#msg").css("opacity", 0);
@@ -166,7 +166,7 @@
       img = li.find("img");
       text = li.find(".contents .text");
       name = li.find(".contents .name");
-      return showMessage(text.text(), name.text(), img.attr("src"));
+      return showMessage(text.html(), name.text(), img.attr("src"));
     };
     $("#messages li img").mousedown(function() {
       return imageTouch(this);
