@@ -15,24 +15,24 @@
     nito_san_back.css("width", nito_san.width());
     nito_san_back.css("height", nito_san.height());
     nito_san_back.css("top", 0);
-    img_aspect = nito_san_img.width() / nito_san_img.height();
+    img_aspect = 1037 / 1106;
     can_aspect = nito_san.width() / nito_san.height();
     if (img_aspect < can_aspect) {
       nito_san_img.css("height", nito_san.height());
-      nito_san_img.css("width", "auto");
+      nito_san_img.css("width", nito_san.height() * img_aspect);
       nito_san_img.css("margin-left", nito_san.width() / 2 - nito_san_img.width() / 2);
       nito_san_img.css("margin-top", 0);
       nito_san_shadow.css("height", nito_san.height());
-      nito_san_shadow.css("width", "auto");
+      nito_san_shadow.css("width", nito_san.height() * img_aspect);
       nito_san_shadow.css("margin-left", nito_san.width() / 2 - nito_san_shadow.width() / 2);
       nito_san_shadow.css("margin-top", 0);
     } else {
       nito_san_img.css("width", nito_san.width());
-      nito_san_img.css("height", "auto");
+      nito_san_img.css("height", nito_san.width() / img_aspect);
       nito_san_img.css("margin-left", 0);
       nito_san_img.css("margin-top", nito_san.height() / 2 - nito_san_img.height() / 2);
       nito_san_shadow.css("width", nito_san.width());
-      nito_san_shadow.css("height", "auto");
+      nito_san_shadow.css("height", nito_san.width() / img_aspect);
       nito_san_shadow.css("margin-left", 0);
       nito_san_shadow.css("margin-top", nito_san.height() / 2 - nito_san_shadow.height() / 2);
     }
