@@ -118,8 +118,6 @@ showMessage = (message_text, name_text, img_src) ->
     name = $ '#msg #msg-text .name'
     img  = $ '#msg-face'
 
-    console.log img
-
     text.text(message_text)
     name.text(name_text)
     img.attr("src", img_src)
@@ -178,10 +176,8 @@ $ ->
         imageTouchEnd this
 
     $("#nito-san img").mousedown (e) ->
-        e.preventDefault()
         accelFlg = true
     $("#nito-san img").bind "touchstart", (e) ->
-        e.preventDefault()
         accelFlg = true
 
     $("#nito-san img").mouseup (e) ->
@@ -191,12 +187,6 @@ $ ->
         e.preventDefault()
         accelFlg = false
 
-        # top =  Number($("#canvas").css("margin-top").replace("px", ""))
-        # left = Number($("#canvas").css("margin-left").replace("px", ""))
-        # width = $("#canvas").width()
-        # height = $("#canvas").height()
-        # console.log();
-        # console.log "(#{(e.pageX - left)/width}, #{(e.pageY - top) / height})"
 
 
 

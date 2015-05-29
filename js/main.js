@@ -117,7 +117,6 @@
     text = $('#msg #msg-text .text');
     name = $('#msg #msg-text .name');
     img = $('#msg-face');
-    console.log(img);
     text.text(message_text);
     name.text(name_text);
     img.attr("src", img_src);
@@ -182,11 +181,9 @@
       return imageTouchEnd(this);
     });
     $("#nito-san img").mousedown(function(e) {
-      e.preventDefault();
       return accelFlg = true;
     });
     $("#nito-san img").bind("touchstart", function(e) {
-      e.preventDefault();
       return accelFlg = true;
     });
     $("#nito-san img").mouseup(function(e) {
