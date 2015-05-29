@@ -114,6 +114,10 @@
   showMessage = function(message_html, name_text, img_src) {
     var img, name, text;
     console.log(img_src);
+    $("#main").on('touchmove.noScroll', function(e) {
+      return e.preventDefault();
+    });
+    $("#main").css("overflow", "hidden");
     text = $('#msg #msg-text .text');
     name = $('#msg #msg-text .name');
     img = $('#msg-face');
@@ -129,6 +133,8 @@
   };
 
   hideMessage = function() {
+    $("#main").off('.noScroll');
+    $("#main").css("overflow", "scroll");
     return $("#msg").animate({
       opacity: 0
     }, "fast", "swing", function() {
@@ -139,10 +145,10 @@
   global.main = {
     start: function() {
       var scroll_to_message_flg;
-      $('html, body').scrollTop(0);
+      $('#main').scrollTop(0);
       scroll_to_message_flg = true;
       setTimeout(function() {
-        return $(window).scroll(function() {
+        return $("#main").scroll(function() {
           return scroll_to_message_flg = false;
         });
       }, 500);

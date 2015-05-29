@@ -111,6 +111,11 @@ showMessage = (message_html, name_text, img_src) ->
     # console.log message
     # console.log name
     console.log img_src
+    # スクロール禁止
+    $("#main").on 'touchmove.noScroll', (e) ->
+        e.preventDefault();
+
+    $("#main").css "overflow", "hidden"
 
     # set up contents
     text = $ '#msg #msg-text .text'
@@ -127,17 +132,21 @@ showMessage = (message_html, name_text, img_src) ->
     $("#msg").animate({opacity: 1}, "fast")
 
 hideMessage = ->
+    # スクロール禁止 解除
+    $("#main").off '.noScroll'
+    $("#main").css "overflow", "scroll"
+
     $("#msg").animate {opacity: 0}, "fast", "swing", ->
         $("#msg").css "display", "none"
 
 global.main =
     start: ->
-        $('html, body').scrollTop(0);
+        $('#main').scrollTop(0);
 
         scroll_to_message_flg = true
 
         setTimeout ->
-            $(window).scroll ->
+            $("#main").scroll ->
                 scroll_to_message_flg = false
         , 500
 
